@@ -1,4 +1,16 @@
 {
+  "projectId": "2eb3sy",
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+    "configFile": "cypress/support/cypress-multi-reporters.json"
+  },
+  "env": {
+    "RETRIES": 2,
+    "allureResultsPath": "allure-results",
+    "allure": true
+  },
   "ignoreTestFiles": "*.js",
-  "testFiles": "**/*.{feature,features}"
+  "testFiles": "**/*.{feature,features}",
+  "viewportWidth": 1920,
+  "viewportHeight": 1080
 }
