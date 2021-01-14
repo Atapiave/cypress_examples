@@ -5,8 +5,16 @@ var ActionsPage = {
         cy.get(element).click()
     },
 
+    click_element_force: function (element) {
+        cy.get(element).click({force: true})
+    },
+
     hit_enter_key: function (element) {
         cy.get(element).type("{enter}")
+    },
+
+    type_text: function (element, value) {
+        cy.get(element).type(value)
     },
 
     type_and_enter: function (element, value) {
@@ -17,7 +25,7 @@ var ActionsPage = {
         cy.get(element).should('have.text', value)
     },
 
-    assert_containts: function (element, value) {
+    assert_contains: function (element, value) {
         cy.get(element).contains(value)
     },
 
@@ -41,6 +49,14 @@ var ActionsPage = {
         cy.get(element).each(($el) => {
             if ($el.text().includes(value)) {
                 ActionsPage.hover_element($el)
+            }
+        })
+    },
+
+    scroll_to_element: function (element, value) {
+        cy.get(element).each(($el) => {
+            if ($el.text().includes(value)) {
+                cy.get($el).scrollTo('bottom')
             }
         })
     }
