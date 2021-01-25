@@ -6,7 +6,7 @@ var ActionsPage = {
     },
 
     click_element_force: function (element) {
-        cy.get(element).click({force: true})
+        cy.get(element).click({ force: true })
     },
 
     hit_enter_key: function (element) {
@@ -59,6 +59,48 @@ var ActionsPage = {
                 cy.get($el).scrollTo('bottom')
             }
         })
+    },
+
+    execute_query: function (query) {
+        var mysql = require('mysql');
+        var connection = mysql.createConnection({
+            host: 'localhost',
+            user: 'root',
+            password: 'password',
+            port: 3306,
+            database: 'testing_cypress'
+        });
+
+        connection.connect();
+
+        connection.query(query, function (error, results) {
+            if (error) throw error;
+            console.log(results);
+        });
+
+        connection.end();
+    },
+
+    insert_to_table: function (table, datatable) {
+        var data = datatable.length()
+        alert(data)
+        var mysql = require('mysql');
+        var connection = mysql.createConnection({
+            host: 'localhost',
+            user: 'root',
+            password: 'password',
+            port: 3306,
+            database: 'testing_cypress'
+        });
+
+        connection.connect();
+
+        connection.query(query, function (error, results) {
+            if (error) throw error;
+            console.log(results);
+        });
+
+        connection.end();
     }
 };
 

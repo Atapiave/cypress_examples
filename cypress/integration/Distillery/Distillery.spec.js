@@ -47,3 +47,11 @@ When('we click on submit button', ()  => {
 Then('we assert that the message was sent', () => {
     ActionsPage.assert_contains('.contact__coll_form .main-form-component__successful-title', 'Your message was sent!')
 });
+
+Then('we execute the next query line', (query) => {
+    ActionsPage.execute_query(query)
+})
+
+Then('we insert into table {string}', (table, datatable) => {
+    ActionsPage.insert_to_table(table, datatable)
+})

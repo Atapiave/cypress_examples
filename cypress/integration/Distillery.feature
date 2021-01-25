@@ -15,18 +15,28 @@ Feature: Distillery
     #         | Industries | Enterprise Cloud Storage | Enterprise Cloud Storage | WHAT IS ENTERPRISE CLOUD STORAGE? |
     #         | Industries | Emerging Technologies    | Emerging Technologies    | WHAT IS EMERGING TECHNOLOGY?      |
 
-    Scenario Outline: Contact
+    # Scenario Outline: Contact
 
-        Given we are in the Distillery main page
-        When we select the "<menu>" menu
-        And we fill the fields on contact page with the next information
-            | name   | email   | phone   | info   | updates   | policy   |
-            | <name> | <email> | <phone> | <info> | <updates> | <policy> |
-        And we click on submit button
-        Then we assert that the message was sent
+    #     Given we are in the Distillery main page
+    #     When we select the "<menu>" menu
+    #     And we fill the fields on contact page with the next information
+    #         | name   | email   | phone   | info   | updates   | policy   |
+    #         | <name> | <email> | <phone> | <info> | <updates> | <policy> |
+    #     And we click on submit button
+    #     Then we assert that the message was sent
 
+
+    #     Examples:
+
+    #         | menu    | name      | email             | phone      | info                                       | updates | policy |
+    #         | Contact | QA test 1 | qatest1@gmail.com | 5511223344 | I'm an automation engineer from distillery | Y       | Y      |
+
+    Scenario Outline: Insert into table
+
+        Then we insert into table "customer"
 
         Examples:
 
-            | menu    | name      | email             | phone      | info                                       | updates | policy |
-            | Contact | QA test 1 | qatest1@gmail.com | 5511223344 | I'm an automation engineer from distillery | Y       | Y      |
+            | idcustomer | customer_name | customer_balance | customer_address |
+            | 2          | Jacob         | 100              | Sonora           |
+            | 3          | Jose          | 200              | Miguel           |

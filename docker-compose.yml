@@ -1,0 +1,13 @@
+version: "1.0"
+
+services:
+  database-postgres:
+    container_name: database-postgres
+    restart: always
+    image: postgres:alpine
+    ports:
+      - ${DB_PORT}:5432
+    environment:
+      POSTGRES_USER: pedro
+      POSTGRES_PASSWORDS: test01
+      POSTGRES_DB: db_test
