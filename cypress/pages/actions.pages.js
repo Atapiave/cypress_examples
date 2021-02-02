@@ -82,25 +82,35 @@ var ActionsPage = {
     },
 
     insert_to_table: function (table, datatable) {
-        var data = datatable.length()
+        var data = datatable.raw()
+        var aux = '';
+        var aux_2 = '';
         alert(data)
-        var mysql = require('mysql');
-        var connection = mysql.createConnection({
-            host: 'localhost',
-            user: 'root',
-            password: 'password',
-            port: 3306,
-            database: 'testing_cypress'
-        });
 
-        connection.connect();
+        // Get columns
+        for (var i = 0; i < data[0].length; i++) {
+            var pivot = data[0].length - i
+            if (pivot === 1) {
+                aux = aux + data[0][i];
+            }
+            else {
+                aux = aux + data[0][i] + ', ';
+            }
+        }
 
-        connection.query(query, function (error, results) {
-            if (error) throw error;
-            console.log(results);
-        });
+        // Get values
+        for (var j = 0; j < data.lenght; j++) {
+            alert("for")
+            for (var n = 0; n < data[0].length; n++){
+                
+                alert(n);
+                aux_2 = aux_2 + data[j + 1][n];
+            }
+        }
 
-        connection.end();
+        var query = 'INSERT INTO ' + table + ' (' + aux + ') ' + 'VALUES ('
+        alert(query)
+
     }
 };
 
