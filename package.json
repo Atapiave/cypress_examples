@@ -1,33 +1,37 @@
 {
   "name": "cypress-cucumber-example",
   "version": "1.0.0",
-  "description": "Example of cypress with cucumber",
+  "description": "Automation scripts",
   "main": "index.js",
   "scripts": {
     "test": "cypress run --spec \"**/*.feature\"",
-    "test:all": "cypress run --spec \"**/*.features\""
+    "test:all": "cypress run --spec \"**/*.features\"",
+    "cypress:report": "generate-mochawesome-report"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TheBrainFamily/cypress-cucumber-example.git"
+    "url": "https://github.com/Atapiave/cypress_examples"
   },
   "keywords": [
     "cypress",
     "cucumber",
     "testing"
   ],
-  "author": "Lukasz Gandecki",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/TheBrainFamily/cypress-cucumber-example/issues"
-  },
-  "homepage": "https://github.com/TheBrainFamily/cypress-cucumber-example#readme",
+  "author": "Arturo Tapia Velasco",
+  "license": "Distillery",
   "dependencies": {
     "cypress": "^4.9.0",
     "cypress-cucumber-preprocessor": "^2.5.0",
+    "lint": "^0.7.0",
     "mysql": "^2.18.1"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true
+  },
+  "devDependencies": {
+    "cypress-mochawesome-reporter": "^1.3.0",
+    "mocha": "^8.2.1",
+    "mochawesome": "^6.2.1",
+    "mochawesome-merge": "^4.2.0"
   }
 }
