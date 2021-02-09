@@ -29,6 +29,7 @@ class ActionsPage {
         })
     }
 
+
     hover_element(element) {
         cy.get(element).trigger('mouseover')
     }
@@ -44,7 +45,7 @@ class ActionsPage {
     scroll_to_element(element, value) {
         cy.get(element).each(($el) => {
             if ($el.text().includes(value)) {
-                cy.get($el).scrollTo('bottom')
+                element.scrollIntoView();
             }
         })
     }
