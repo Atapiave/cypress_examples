@@ -4,7 +4,7 @@ class MainPageLocator {
     }
 
     options() {
-        return 'div:nth-of-type(1) > .nav-content.navigation-menu__item-content  .nav-content__subcategory-wrap > a '
+        return '.nav-content.navigation-menu__item-content  .nav-content__subcategory-wrap > a '
     }
 
     page_title() {
