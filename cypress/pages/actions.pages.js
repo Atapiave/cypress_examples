@@ -1,8 +1,11 @@
-
 class ActionsPage {
 
     click_element(element) {
         cy.get(element).click()
+    }
+
+    click_element_xpath(element) {
+        cy.xpath(element).first().click()
     }
 
     click_element_force(element) {
@@ -28,7 +31,6 @@ class ActionsPage {
             }
         })
     }
-
 
     hover_element(element) {
         cy.get(element).trigger('mouseover')

@@ -14,6 +14,10 @@ class MainPageLocator {
     subtitle() {
         return '.expertise-detail__title.styleguide-typography__subtitle'
     }
+
+    options_nbsp(href) {
+        return "// a[contains(@href, '/" + href + "/')]"
+    }
 };
 
 export default MainPageLocator;
